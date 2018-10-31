@@ -6,7 +6,7 @@
 #    By: alamit <alamit@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/30 21:26:30 by alamit            #+#    #+#              #
-#    Updated: 2018/10/31 08:55:23 by alamit           ###   ########.fr        #
+#    Updated: 2018/10/31 09:40:56 by alamit           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ all: $(NAME)
 $(NAME): $(SRC)
 	$(CC) -c $(CFLAGS) $(INCLUDE) $(SRC)
 	mkdir $(NAME)
-	cp API_H $(NAME)
+	cp $(API_H) $(NAME)
 	ar -rcs $(NAME)/$(NAME).a $(OUT)
 
 test: $(SRC) $(TEST)
