@@ -6,7 +6,7 @@
 /*   By: alamit <alamit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/30 21:43:26 by alamit            #+#    #+#             */
-/*   Updated: 2018/10/31 08:45:18 by alamit           ###   ########.fr       */
+/*   Updated: 2018/10/31 09:37:30 by alamit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	apply_level(t_node *root, void (*f)(), unsigned long level)
 		return ;
 	else if (level == 0)
 		f(g_data(root));
-	els
+	else
 	{
 		apply_level(left(root), f, level - 1);
 		apply_level(right(root), f, level - 1);
