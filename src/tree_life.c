@@ -6,7 +6,7 @@
 /*   By: alamit <alamit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/31 08:35:19 by alamit            #+#    #+#             */
-/*   Updated: 2018/10/31 08:39:19 by alamit           ###   ########.fr       */
+/*   Updated: 2018/10/31 09:38:53 by alamit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void		destroy_level(t_node *node,
 	destroy_level(right(node), level - 1, destroy);
 }
 
-void	tree_destroy(t_tree **tree)
+void			tree_destroy(t_tree **tree)
 {
 	unsigned long height;
 
