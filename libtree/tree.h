@@ -6,7 +6,7 @@
 /*   By: alamit <alamit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/30 21:20:01 by alamit            #+#    #+#             */
-/*   Updated: 2018/11/01 00:17:30 by alamit           ###   ########.fr       */
+/*   Updated: 2018/11/01 14:11:07 by alamit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ void			**tree_to_array(t_tree *tree, void (*cpy)());
 /*
 **	NOTE: Change to take print function as param.
 */
-void			tree_print(t_tree *tree);
+void			tree_print(t_tree *tree, void (*print)());
 
 #endif

@@ -14,22 +14,22 @@ static void padding(char c, int n)
     }
 }
 
-static void print(t_node *root, unsigned long level)
+static void print(t_node *root, unsigned long level, void (*f)())
 {
     if (root == NULL)
         return ;
     else
     {
-        print(right(root), level + 1);
+        print(right(root), level + 1, f);
         padding('\t', level);
-        printf("%s%ld%s\n", color(root) == RED ? "\x1B[31m" : "",
-                            (long)g_data(root),
-                            "\x1B[0m");
-        print(left(root), level + 1);
+        printf(color(root) ? "\x1B[31m" : "\x1B[0m");
+        f(g_data(root));
+        printf("\x1B[0m\n");
+        print(left(root), level + 1, f);
     }
 }
 
-void        tree_print(t_tree *tree)
+void        tree_print(t_tree *tree, void (*f)())
 {
-    print(tree->root, 0);
+    print(tree->root, 0, f);
 }

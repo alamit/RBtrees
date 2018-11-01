@@ -6,7 +6,7 @@
 /*   By: alamit <alamit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/31 08:35:24 by alamit            #+#    #+#             */
-/*   Updated: 2018/10/31 23:05:24 by alamit           ###   ########.fr       */
+/*   Updated: 2018/11/01 14:12:19 by alamit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int		main(int ac, char **av)
 	printf("%ld\n", (long)tree_reduce(tree, NULL, sum));
 	printf("%lu\n", tree_height(tree));
 	//tree_apply_bfs(tree, print, 1);
-	tree_print(tree);
+	tree_print(tree, print);
 	printf("%s\n", (tree_contains(tree, (void *)12l)) ? "true" : "false");
 	printf("%s\n", (tree_contains(tree, (void *)120l)) ? "true" : "false");
 
