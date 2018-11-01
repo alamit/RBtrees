@@ -6,7 +6,7 @@
 /*   By: alamit <alamit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/30 21:20:01 by alamit            #+#    #+#             */
-/*   Updated: 2018/10/31 20:42:28 by alamit           ###   ########.fr       */
+/*   Updated: 2018/11/01 00:17:10 by alamit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 /*
 **	TODO LIST
 **	void			tree_filter(t_tree *tree, void *min, void *max);
-**	t_node			*tree_find(t_tree *tree, int (*f)());
 */
 
 typedef enum	e_color {BLACK, RED}
@@ -52,7 +51,10 @@ unsigned long	tree_size(t_tree *tree);
 int				tree_is_empty(t_tree *tree);
 unsigned long	tree_height(t_tree *tree);
 int 			tree_contains(t_tree *tree, void *data);
-
+void			*tree_find(t_tree *tree, void *base);
+/*
+**	NOTE: Change to take print function as param.
+*/
 void			tree_print(t_tree *tree);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: alamit <alamit@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/30 21:26:30 by alamit            #+#    #+#              #
-#    Updated: 2018/10/31 09:40:56 by alamit           ###   ########.fr        #
+#    Updated: 2018/10/31 23:54:22 by alamit           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRC_DIR = src
 PVT_DIR = src/pvt
 
 SRC = tree_life.c tree_insert.c tree_delete.c tree_utils.c tree_reduce.c \
-		tree_print.c tree_contains.c tree_apply.c
+		tree_print.c tree_contains.c tree_apply.c tree_find.c tree_to_array.c
 PVT = node_family.c node_getters.c node_helpers.c node_rotations.c
 TEST = main.c
 OUT = $(SRC) $(PVT)

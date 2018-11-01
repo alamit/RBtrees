@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tree_contains.c                                    :+:      :+:    :+:   */
+/*   tree_find.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alamit <alamit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/30 17:11:30 by alamit            #+#    #+#             */
-/*   Updated: 2018/10/31 22:29:38 by alamit           ###   ########.fr       */
+/*   Created: 2018/10/31 22:24:33 by alamit            #+#    #+#             */
+/*   Updated: 2018/11/01 00:15:31 by alamit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,19 @@
 #include <tree_pvt.h>
 #include <stdlib.h>
 
-static	int	contains(t_node *node, void *data, int (*cmp)())
+static void	*find(t_node *node, void *base, int (*cmp)())
 {
 	if (node == NULL)
-		return (0);
-	return (cmp(g_data(node), data) == 0 ||
-			contains(left(node), data, cmp) ||
-			contains(right(node), data, cmp));
+		return (NULL);
+	else if (cmp(base, g_data(node)) == 0)
+		return (g_data(node));
+	else if (cmp(base, g_data(node)) < 0)
+		return (find(left(node), base, cmp));
+	else
+		return (find(right(node), base, cmp));
 }
 
-int			tree_contains(t_tree *tree, void *data)
+void		*tree_find(t_tree *tree, void *base)
 {
-	return (contains(tree->root, data, tree->cmp));
+	return (find(tree->root, base, tree->cmp));
 }
