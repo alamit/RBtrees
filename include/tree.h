@@ -6,7 +6,7 @@
 /*   By: alamit <alamit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/30 21:20:01 by alamit            #+#    #+#             */
-/*   Updated: 2018/11/01 00:17:10 by alamit           ###   ########.fr       */
+/*   Updated: 2018/11/01 00:17:30 by alamit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int				tree_is_empty(t_tree *tree);
 unsigned long	tree_height(t_tree *tree);
 int 			tree_contains(t_tree *tree, void *data);
 void			*tree_find(t_tree *tree, void *base);
+void			**tree_to_array(t_tree *tree, void (*cpy)());
 /*
 **	NOTE: Change to take print function as param.
 */
