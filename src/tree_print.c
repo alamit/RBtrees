@@ -22,8 +22,8 @@ static void print(t_node *root, unsigned long level)
     {
         print(right(root), level + 1);
         padding('\t', level);
-        printf("%s%ld%s\n", color(root) == RED ? "\x1B[31m" : "",
-                            (long)g_data(root),
+        printf("%s%s%s\n", color(root) == RED ? "\x1B[31m" : "",
+                            (char *)g_data(root),
                             "\x1B[0m");
         print(left(root), level + 1);
     }

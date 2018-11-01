@@ -14,6 +14,14 @@
 #include <tree_pvt.h>
 #include <stdlib.h>
 
+static void	color_rb(t_node *parent, t_node *g_parent)
+{
+	if (parent)
+		parent->color = BLACK;
+	if (g_parent)
+		g_parent->color = RED;
+}
+
 static void	insert(t_node	*root, t_node *new, int (*cmp)())
 {
 	if (cmp(g_data(new), g_data(root)) < 0)
@@ -44,10 +52,9 @@ static void	balance(t_node *node)
 		node->color = BLACK;
 	else if (color(parent(node)) == RED)
 	{
-		parent(node)->color = BLACK;
-		grand_parent(node)->color = RED;
 		if (color(uncle(node)) == RED)
 		{
+			color_rb(parent(node), grand_parent(node));
 			uncle(node)->color = BLACK;
 			balance(grand_parent(node));
 			return ;
@@ -62,7 +69,8 @@ static void	balance(t_node *node)
 			rotate_right(parent(node));
 			node = right(node);
 		}
-		(node == left(parent(node))) ? rotate_right(grand_parent(node)) 
+		color_rb(parent(node), grand_parent(node));
+		(node == left(parent(node))) ? rotate_right(grand_parent(node))
 										: rotate_left(grand_parent(node));
 	}
 }
